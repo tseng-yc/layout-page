@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+  <style>
+    * {
+      font-family: "Segoe UI", "Helvetica Neue", "Helvetica", Arial,
+        sans-serif;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    li {
+      margin: 0 10px;
+      list-style-type: none;
+    }
+
+    nav {
+      background-color: #2c2c32;
+    }
+
+    .navbar-fixed-container {
+      position: relative;
+      background-color: #2c2c32;
+      height: 50px;
+      z-index: 2;
+    }
+
+    .navbar-fixed-top {
+      position: fixed;
+      top: 0;
+    }
+
+    .navbar-brand {
+      position: relative;
+      background-size: 24px 24px;
+      background-repeat: no-repeat;
+      background-position: left 50%;
+      padding-left: 36px;
+      font-size: 20px;
+      color: white !important;
+      min-height: 50px;
+      padding-top: 15px;
+      line-height: 20px;
+      background-image: url(./image/下載.png);
+    }
+
+    .nav-link {
+      font-weight: 400;
+      font-size: 15px;
+      color: #9d9d9d;
+    }
+
+    .updates-banner {
+      background-color: #25252b;
+      color: #ccc;
+      font-size: 15px;
+      position: relative;
+    }
+
+    .updates-banner .container p {
+      text-align: center;
+      margin: 13px auto;
+    }
+
+    nav .link-button {
+      height: 50px;
+      width: 130px;
+    }
+
+    .jumbotron {
+      overflow: hidden;
+      background-color: #2c2c32;
+      color: white;
+      border-radius: 0;
+      font-weight: 300;
+    }
+
+    .jumbotron p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .screenshot {
+      background-image: url(./image/home-screenshot-mac-2x.png);
+      padding-bottom: 75.68882%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .value-prop {
+      font-size: 18px;
+      padding: 1rem 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      color: #444;
+      text-decoration: none;
+    }
+
+    .value-prop:hover {
+      color: #444;
+      text-decoration: none;
+      background-color: #ddd;
+    }
+
+    .value-prop-icon {
+      background-image: url(./image/valueprops-top-sprite.svg);
+      background-repeat: no-repeat;
+      width: 3.5rem;
+      height: 3.5rem;
+      background-size: 14rem 7rem;
+      margin: auto;
+      margin-bottom: 1rem;
+    }
+
+    .intelliSense {
+      background-position: 0 0;
+    }
+
+    .hov-int:hover .intelliSense {
+      background-position: 0 -3.55rem;
+    }
+
+    .debug {
+      background-position: -3.5rem 0;
+    }
+
+    .hov-deb:hover .debug {
+      background-position: -3.5rem -3.55rem;
+    }
+
+    .git {
+      background-position: -7rem 0;
+    }
+
+    .hov-git:hover .git {
+      background-position: -7rem -3.55rem;
+    }
+
+    .extensions {
+      background-position: -10.5rem 0;
+    }
+
+    .hov-ext:hover .extensions {
+      background-position: -10.5rem -3.55rem;
+    }
+
+    .swimlane {
+      padding: 6rem 0 6rem;
+      min-height: 25rem;
+      position: relative;
+      background-color: #f5f5f5;
+    }
+
+    .swimlane:nth-child(even) {
+      background-color: initial;
+    }
+
+    .swimlane:nth-child(odd) {
+      background-color: #f5f5f5;
+    }
+
+    .mask {
+      background: linear-gradient(to bottom,
+          #f5f5f5,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0),
+          #f5f5f5);
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: -20px;
+    }
+
+    .supported-languages-list>ul {
+      height: 100%;
+      width: 100%;
+      box-sizing: content-box;
+      padding-right: 20px;
+      overflow-y: scroll;
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 0;
+    }
+
+    .link-button {
+      background-color: #0066b8;
+      color: white !important;
+      margin: 20px 0;
+      font-family: "Segoe UI", "Helvetica Neue", "Helvetica", Arial,
+        sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      padding: 15px 3px;
+      display: inline-block;
+      color: inherit;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .vscode-for h3 {
+      text-align: right;
+      margin-top: -1.6rem;
+      position: relative;
+      top: 50%;
+    }
+
+    .caption .link-button {
+      width: 230px;
+      font-size: 20px;
+    }
+
+    .download {
+      font-size: 14px;
+      font-weight: 200;
+      padding: 0 25px;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .download .big {
+      width: 250px;
+      border: none;
+    }
+
+    .download .small {
+      width: 170px;
+      border: none;
+    }
+
+    footer {
+      background-color: #2c2c32;
+      font-size: 15px;
+      color: white;
+      padding-top: 25px;
+      padding-bottom: 15px;
+    }
+
+    .license-terms {
+      color: #6c6c6c;
+      padding: 20px 100px;
+      font-weight: 300;
+    }
+
+    footer .right {
+      font-size: 12px;
+    }
+
+    footer .copyright {
+      margin-left: 30px;
+    }
+
+    footer a {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar-fixed-container">
+    <div class="navbar navbar-inverse navbar-fixed-top p-0 w-100">
+      <nav class="navbar navbar-expand-lg py-0 w-100">
+        <div class="container">
+          <a class="navbar-brand" href="#">Visual Studio Code</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="#">Docs</a>
+              <a class="nav-item nav-link" href="#">Updates</a>
+              <a class="nav-item nav-link" href="#">Blog</a>
+              <a class="nav-item nav-link" href="#">API</a>
+              <a class="nav-item nav-link" href="#">Extensions</a>
+              <a class="nav-item nav-link" href="#">FAQ</a>
+            </div>
+          </div>
+          <div class="nav navbar-nav avbar-right" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <div class="search">
+                <form class="nav-search search-form" aria-label="Search" action="">
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button tabindex="0" class="btn" type="submit" aria-label="Search">
+                        <img class="search-icon" width="18px" src="./image/search.svg" alt="" />
+                      </button>
+                    </span>
+                    <input class="search-box form-control" placeholder="Search Docs" aria-label="Search text"
+                      type="text" />
+                  </div>
+                </form>
+              </div>
+              <div>
+                <a class="link-button m-0" itemprop="downloadUrl" href="#">
+                  <img class="download-icon" width="18px" src="./image/download.svg" alt="" />
+                  <span class="hidden-sm">Download</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="updates-banner home">
+    <div class="container d-flex flex-row">
+      <p class="message">
+        <a href="">Version <span> 1.48</span> </a> is now available! Read
+        about the new features and fixes from July.
+      </p>
+    </div>
+  </div>
+  <div role="main" id="main-content">
+    <div class="jumbotron home py-4 m-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 copy text-center pt-5">
+            <h1>Code editing.</h1>
+            <h1><strong>Redefined.</strong></h1>
+            <div class="lead">
+              <p>
+                Free. Built on open source. Runs everywhere.
+              </p>
+            </div>
+            <div class="download-hero alt-downloads osx">
+              <div class="primary-buttons d-flex flex-column text-center">
+                <div class="btn-group">
+                  <button type="button" class="link-button btn btn-primary">
+                    <h6>Download for Mac</h6>
+                    <small class="build-type">Stable Build</small>
+                  </button>
+                  <button type="button" class="link-button btn btn-primary dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
+                </div>
+                <p class="subtext text-center">
+                  <a href="">Other platforms</a>
+                  and
+                  <a href="">Insiders Edition</a>
+                </p>
+                <p class="terms">
+                  By using VS Code, you agree to its
+                  <span class="wrap-together"><a href="">license and privacy statement</a></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="screenshot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="value-props text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 col-xs-6">
+            <a class="value-prop hov-int" href="">
+              <div class="value-prop-icon intelliSense"></div>
+              IntelliSense
+            </a>
+          </div>
+          <div class="col-sm-3 col-xs-6">
+            <a class="value-prop hov-deb" href="">
+              <div class="value-prop-icon debug"></div>
+              Run and Debug
+            </a>
+          </div>
+          <div class="col-sm-3 col-xs-6">
+            <a class="value-prop hov-git" href="">
+              <div class="value-prop-icon git"></div>
+              Built-in Git
+            </a>
+          </div>
+          <div class="col-sm-3 col-xs-6">
+            <a class="value-prop hov-ext" href="">
+              <div class="value-prop-icon extensions"></div>
+              Extensions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swimlane-container">
+      <div class="swimlane social-proof">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 w-100%">
+              <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-interval="10000">
+                    <img src="./image/slide1.png" width="900px" class="d-block m-auto" alt="..." />
+                  </div>
+                  <div class="carousel-item" data-interval="2000">
+                    <img src="./image/slide2.png" width="900px" class="d-block m-auto" alt="..." />
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swimlane">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <img src="./image/home-intellisense.svg" alt="" />
+            </div>
+            <div class="col-sm-7 col-sm-push-1">
+              <h2>Meet IntelliSense.</h2>
+              <p>
+                Go beyond syntax highlighting and autocomplete with
+                IntelliSense, which provides smart completions based on
+                variable types, function definitions, and imported modules.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swimlane">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-7 col-sm-pull-4">
+              <h2>Print statement debugging is a thing of the past.</h2>
+              <p>
+                Debug code right from the editor. Launch or attach to your
+                running apps and debug with break points, call stacks, and an
+                interactive console.
+              </p>
+            </div>
+            <div class="col-sm-4 col-sm-push-8">
+              <img src="./image/home-debug.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swimlane">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <img src="./image/home-git.svg" alt="" />
+            </div>
+            <div class="col-sm-7 col-sm-push-1">
+              <h2>Git commands built-in.</h2>
+              <p>
+                Working with Git and other SCM providers has never been
+                easier. Review diffs, stage files, and make commits right from
+                the editor. Push and pull from any hosted SCM service.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swimlane">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-7 col-sm-pull-4">
+              <h2>Extensible and customizable.</h2>
+              <p>
+                Want even more features? Install extensions to add new
+                languages, themes, debuggers, and to connect to additional
+                services. Extensions run in separate processes, ensuring they
+                won't slow down your editor.
+              </p>
+            </div>
+            <div class="col-sm-4 col-sm-push-8">
+              <img src="./image/Hundreds-of-Extensions.png" width="340px" height="220px" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swimlane">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <img src="./image/home-azure.svg" alt="" />
+            </div>
+            <div class="col-sm-7 col-sm-push-1">
+              <h2>Deploy with confidence and ease</h2>
+              <p>
+                With <a href="">Microsoft Azure</a> you can deploy and host
+                your React, Angular, Vue, Node, Python (and more!) sites,
+                store and query relational and document based data, and scale
+                with serverless computing, all with ease,
+                <a href="">all from within VS Code</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swimlane getting-started">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 vscode-for">
+              <h3>VS Code for</h3>
+            </div>
+            <div class="col-sm-6 home-languages-list-parent">
+              <div class="mask"></div>
+              <div class="supported-languages-list">
+                <ul data-reactroot>
+                  <li>JavaScript</li>
+                  <li>SQL</li>
+                  <li>Visual Basic</li>
+                  <li>Ruby</li>
+                  <li>TypeScript</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row caption text-center mt-4">
+            <div class="col-sm-12">
+              <a href="" class="link-button">Get Started Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container swimlane alt-downloads download-buttons osx">
+        <div class="row  buttons text-center">
+          <div class="download mx-auto">
+            <div class="logo windows">
+              <img src="./image/windows-logo.png" height="100px" alt="">
+              <br>
+              <button class="link-button btn-primary big">
+                <h6> <img class="download-icon" src="./image/download.svg" wight="18px" height="18px" alt="" />
+                  Windows</h6>
+                <small>Windows 7, 8, 10</small>
+              </button>
+
+              <table class="win-downloads m-auto">
+                <colgroup>
+                  <col />
+                  <col />
+                  <col />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td><strong>User Installer</strong></td>
+                    <td><a class="dlink" href="">64 bit</a></td>
+                    <td><a class="dlink" href="">32 bit</a></td>
+                    <td><a class="dlink" href="">ARM</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>System Installer</strong></td>
+                    <td><a class="dlink" href="">64 bit</a></td>
+                    <td><a class="dlink" href="">32 bit</a></td>
+                    <td><a class="dlink" href="">ARM</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>.zip</strong></td>
+                    <td><a class="dlink" href="">64 bit</a></td>
+                    <td><a class="dlink" href="">32 bit</a></td>
+                    <td><a class="dlink" href="">ARM</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="download mx-auto">
+            <div class="logo linux">
+              <img src="./image/linux-logo.png" height="100px" alt="">
+              <br>
+              <button class="link-button btn-primary small">
+                <h6><img class="download-icon" width="18px" height="18px" src="./image/download.svg" alt="" />
+                  .deb</h6>
+                <small>Debian, Ubuntu</small>
+              </button>
+              <button class="link-button btn-primary small">
+                <h6><img class="download-icon" width="18px" height="18px" src="./image/download.svg" alt="" />
+                  .rpm</h6>
+                <small>Red Hat, Fedora, SUSE</small>
+              </button>
+              <table class="linux-downloads m-auto">
+                <colgroup>
+                  <col />
+                  <col />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td><strong>.deb</strong></td>
+                    <td><a class="dlink" href=""></a>64 bit</td>
+                  </tr>
+                  <tr>
+                    <td><strong>.rpm</strong></td>
+                    <td><a class="dlink" href=""></a>64 bit</td>
+                  </tr>
+                  <tr>
+                    <td><strong>.tar.gz</strong></td>
+                    <td><a class="dlink" href=""></a>64 bit</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="padding-top: 6px;">
+                      <strong><a href="">Snap Store</a></strong>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="download mx-auto">
+            <div class="logo mac">
+              <img src="./image/apple-logo.svg" height="100px" alt="">
+              <br>
+              <button class="link-button btn-primary big">
+                <h6><img class="download-icon" width="18px" height="18px" src="./image/download.svg" alt="" />
+                  Mac</h6>
+                <small>macOS 10.10+</small>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="alt-downloads swimlane-container insiders-callout">
+        <div class="swimlane p-1.5rem mb-2rem">
+          <div class="container">
+            <div class="row">
+              <div class="license-terms text-center p-auto m-auto">
+                <h2 class="faux-h3">Want new features sooner?</h2>
+                <p>
+                  Get the <a href="">Insiders build</a>and
+                  <a href="">privacy statement</a>instead.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="license-terms text-center px-5">
+                <h3 class="faux-h4">License and Privacy Terms</h3>
+                <p class="px-5">
+                  By downloading and using Visual Studio Code, you agree to
+                  the <a href="">license terms</a>and
+                  <a href="">privacy statement</a>. VS Code automatically
+                  sends telemetry data and crash dumps to help us improve the
+                  product. If you would prefer not to have this data sent
+                  please go see
+                  <a href="">How to Disable Crash Reporting</a> to learn how
+                  to disable it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="left col-md-7">
+          <ul class="links d-flex flex-row p-0">
+            <li>
+              <span class="message">Hello from Seattle.</span>
+              <a href="">Follow @code</a>
+            </li>
+            <img src="./image/githubfollower.png" width="130px" height="30px" alt="" />
+          </ul>
+        </div>
+        <div class="right col-md-5">
+          <ul class="links d-flex flex-row m-0 p-0 ">
+            <li><a href="">Support</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Terms of Use</a></li>
+            <li><a href="">License</a></li>
+            <div class="copyright ">
+              <a class="logo m-0 d-flex flex-wrap" href=""><img class="microsoft-logo" height="20"
+                  src="./image/microsoft-logo.png" alt="" /></a>
+              <span>
+                © 2020 Microsoft
+              </span>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
