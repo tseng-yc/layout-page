@@ -1,0 +1,513 @@
+* {
+  font-family: "Segoe UI", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  margin: 0 10px;
+  list-style-type: none;
+}
+
+nav {
+  background-color: #2c2c32;
+}
+
+.navbar-fixed-container {
+  position: relative;
+  background-color: #2c2c32;
+  height: 50px;
+  z-index: 2;
+}
+
+.navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 20;
+  padding: 0;
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.33);
+}
+
+.navbar-brand {
+  position: relative;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: left 50%;
+  padding-left: 36px;
+  font-size: 20px;
+  color: white !important;
+  min-height: 50px;
+  padding-top: 15px;
+  line-height: 20px;
+  background-image: url(./image/下載.png);
+}
+
+.input-group {
+  position: relative;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  width: 183px !important;
+  height: 50px;
+  padding: 6px 15px 6px 40px;
+  font-weight: 300;
+  font-size: small;
+}
+
+.form-control:hover {
+  outline: 1px solid rgba(255, 255, 255, 0.2);
+  outline-offset: -1px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.input-group-btn {
+  width: 28px;
+  left: 8px;
+  position: absolute;
+}
+
+.collapse {
+  position: relative;
+}
+
+.navbar-right {
+  position: absolute;
+  right: 0;
+}
+
+.navbar-right .search .search-form .input-group button {
+  padding: 8px 6px 12px 6px;
+  border: 0;
+  background-color: transparent;
+}
+
+.only-btn {
+  display: none;
+}
+
+.nav-link {
+  font-weight: 400;
+  font-size: 15px;
+  color: #9d9d9d;
+}
+
+.updates-banner {
+  background-color: #25252b;
+  color: #ccc;
+  font-size: 15px;
+  position: relative;
+}
+
+.updates-banner .container p {
+  text-align: center;
+  margin: 13px auto;
+}
+
+nav .link-button {
+  height: 50px;
+  width: 133px;
+}
+
+.download-icon {
+  margin-bottom: 3px;
+  margin-right: 7px;
+}
+
+nav .link-button:hover {
+  background-color: #005ba4;
+  text-decoration: none;
+}
+
+.jumbotron {
+  overflow: hidden;
+  background-color: #2c2c32;
+  color: white;
+  border-radius: 0;
+  font-weight: 300;
+}
+
+.jumbotron p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-group {
+  width: 260px;
+  height: 130px;
+  margin: auto;
+}
+
+.screenshot {
+  background-image: url(./image/home-screenshot-mac-2x.png);
+  padding-bottom: 75.68882%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.tewwts > div {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  min-height: 85px;
+}
+
+.profile-img {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-size: 100%;
+  background-position: 50% 25%;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+}
+
+.text-content {
+  padding-left: 4rem;
+  padding-top: 5px;
+}
+
+.attribution {
+  color: black;
+}
+
+.name {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.handle {
+  font-size: 0.6rem;
+  font-weight: 300;
+  color: #6e6e6e;
+  display: block;
+}
+
+.tweet-body {
+  font-weight: 300;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+
+.tweets > div::after {
+  background-image: url("./image/firststart-sidebar-sprite.svg");
+  content: "";
+  width: 0.8rem;
+  height: 0.9rem;
+  background-size: 4rem 0.8rem;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+  opacity: 0.2;
+  background-position: 50% 50%;
+}
+
+.carousel {
+  padding: 1rem;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.value-prop {
+  font-size: 17px;
+  padding: 0.8rem 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #444;
+  text-decoration: none;
+  font-weight: 350;
+}
+
+.value-prop:hover {
+  color: #444;
+  text-decoration: none;
+  background-color: #ddd;
+}
+
+.value-prop-icon {
+  background-image: url(./image/valueprops-top-sprite.svg);
+  background-repeat: no-repeat;
+  width: 2.6rem;
+  height: 2.6rem;
+  background-size: 10rem 7rem;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}
+
+.intelliSense {
+  background-position: 0.1rem -0.875rem;
+}
+
+.hov-int:hover .intelliSense {
+  background-position: 0.1rem -3.44rem;
+}
+
+.debug {
+  background-position: -2.4rem -0.9rem;
+}
+
+.hov-deb:hover .debug {
+  background-position: -2.4rem -3.45rem;
+}
+
+.git {
+  background-position: -4.95rem -0.85rem;
+}
+
+.hov-git:hover .git {
+  background-position: -4.95rem -3.45rem;
+}
+
+.extensions {
+  background-position: -7.5rem -0.85rem;
+}
+
+.hov-ext:hover .extensions {
+  background-position: -7.5rem -3.425rem;
+}
+
+.swimlane {
+  padding: 3rem 0 3rem;
+  position: relative;
+  background-color: #f5f5f5;
+}
+
+.swimlane:nth-child(even) {
+  background-color: initial;
+}
+
+.swimlane:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+.swimlane p {
+  line-height: 2rem;
+  font-weight: 300;
+}
+.swimlane img {
+  margin-top: 1rem;
+}
+
+.swimlane h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.mask {
+  background: linear-gradient(
+    to bottom,
+    #f5f5f5,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    #f5f5f5
+  );
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: -20px;
+}
+
+.supported-languages-list > ul {
+  height: 100%;
+  width: 100%;
+  box-sizing: content-box;
+  padding-right: 20px;
+  overflow-y: scroll;
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.link-button {
+  background-color: #0066b8;
+  color: white !important;
+  margin: 20px 0;
+  font-family: "Segoe UI", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 15px 3px;
+  display: inline-block;
+  color: inherit;
+  cursor: pointer;
+  text-align: center;
+}
+
+.vscode-for h3 {
+  text-align: right;
+  margin-top: -1.6rem;
+  position: relative;
+  top: 50%;
+}
+
+.caption .link-button {
+  width: 230px;
+  font-size: 20px;
+}
+
+.download {
+  font-size: 14px;
+  font-weight: 200;
+  padding: 0 25px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.download .big {
+  width: 250px;
+  border: none;
+}
+
+.download .small {
+  width: 170px;
+  border: none;
+}
+
+footer {
+  background-color: #2c2c32;
+  font-size: 15px;
+  color: white;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.license-terms {
+  color: #6c6c6c;
+  padding: 20px 100px;
+  font-weight: 300;
+}
+
+footer .right {
+  font-size: 12px;
+}
+
+footer .copyright {
+  margin-left: 30px;
+}
+
+footer a {
+  color: #fff;
+}
+
+@media screen and (min-width: 1200px) {
+  .visible-xs {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .search {
+    display: none;
+  }
+  .navbar-right button {
+    display: block;
+  }
+  .collapse {
+    position: relative;
+  }
+  .navbar-right {
+    position: absolute;
+    right: 0;
+  }
+  .visible-xs {
+    display: none;
+  }
+
+  .swimlane .swimlane-img {
+    width: 220px;
+    height: 143px;
+    margin-top: 28px;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .swimlane p {
+    font-size: 16px;
+  }
+  .tweets > div {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-height: 85px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .visible-xs {
+    display: block;
+  }
+  .navbar-right {
+    display: none;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+  .swimlane p {
+    font-size: 16px;
+  }
+
+  .swimlane {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .swimlane .swimlane-img {
+    width: 220px;
+    height: 143px;
+    margin-top: 28px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .swimlane .swimlane-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .swimlane .swimlane-row .col-sm-7 {
+    margin: auto;
+  }
+  .swimlane .swimlane-row .col-sm-4 {
+    margin: auto;
+  }
+  .swimlane .row-reverse {
+    flex-direction: column-reverse;
+  }
+  /* .swimlane .swimlane-row .col-sm-4 .swimlane-img {
+    width: 100%;
+  } */
+}
+
+@media screen and (max-width: 575px) {
+  .swimlane .swimlane-row .col-sm-4 .swimlane-img {
+    width: 100%;
+  }
+
+  .getting-started {
+    text-align: center;
+    font-weight: 300;
+  }
+  .getting-started h3 {
+    text-align: center;
+    font-weight: 300;
+  }
+}
